@@ -40,3 +40,7 @@ target_link_libraries(
         mmkv::mmkv                  # <-- MMKV core
         android                     # <-- Android core
 )
+
+# 16KB page size support for Android 15+
+target_link_options(${PACKAGE_NAME} PRIVATE "-Wl,-z,max-page-size=16384")
+
